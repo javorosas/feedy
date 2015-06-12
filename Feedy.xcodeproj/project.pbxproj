@@ -17,6 +17,7 @@
 		3EBB20151B2A58C000318683 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB20131B2A58C000318683 /* LaunchScreen.xib */; };
 		3EBB20211B2A58C100318683 /* FeedyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20201B2A58C100318683 /* FeedyTests.m */; };
 		3EBB202E1B2A5E9300318683 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB202D1B2A5E9300318683 /* Profile.m */; };
+		3EBB20311B2B530C00318683 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20301B2B530C00318683 /* FeedCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		3EBB20201B2A58C100318683 /* FeedyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedyTests.m; sourceTree = "<group>"; };
 		3EBB202C1B2A5E9300318683 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Profile.h; path = Models/Profile.h; sourceTree = "<group>"; };
 		3EBB202D1B2A5E9300318683 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Profile.m; path = Models/Profile.m; sourceTree = "<group>"; };
+		3EBB202F1B2B530C00318683 /* FeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		3EBB20301B2B530C00318683 /* FeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
 		A8B427F06F8189FE82BABDD1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DBF57D5014CCFA6DC1BACF40 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,6 +160,8 @@
 				3EBB20091B2A58C000318683 /* FirstViewController.m */,
 				3EBB200B1B2A58C000318683 /* SecondViewController.h */,
 				3EBB200C1B2A58C000318683 /* SecondViewController.m */,
+				3EBB202F1B2B530C00318683 /* FeedCell.h */,
+				3EBB20301B2B530C00318683 /* FeedCell.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				3EBB200D1B2A58C000318683 /* SecondViewController.m in Sources */,
 				3EBB202E1B2A5E9300318683 /* Profile.m in Sources */,
 				3EBB20071B2A58C000318683 /* AppDelegate.m in Sources */,
+				3EBB20311B2B530C00318683 /* FeedCell.m in Sources */,
 				3EBB200A1B2A58C000318683 /* FirstViewController.m in Sources */,
 				3EBB20041B2A58C000318683 /* main.m in Sources */,
 			);
