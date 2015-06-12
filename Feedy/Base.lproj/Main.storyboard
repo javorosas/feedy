@@ -23,16 +23,16 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--CatsFeedTableController-->
+        <!--Cats Feed-->
         <scene sceneID="B3V-A9-bEN">
             <objects>
-                <tableViewController id="Hv6-23-XpM" userLabel="CatsFeedTableController" sceneMemberID="viewController">
+                <tableViewController id="Hv6-23-XpM" userLabel="Cats Feed" customClass="CatsFeedViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="500" sectionHeaderHeight="22" sectionFooterHeight="22" id="cHd-kB-PPI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="500" id="KQY-Tp-MfJ" customClass="FeedCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="500" id="KQY-Tp-MfJ" customClass="FeedCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQY-Tp-MfJ" id="dDz-th-3wW">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -116,8 +116,8 @@
                     <navigationItem key="navigationItem" title="#Cats" id="qm7-Vn-BMu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="tWG-Gz-0s2" kind="show" id="8uI-P2-LF6"/>
-                        <segue destination="C9N-hf-9Kh" kind="show" id="rc3-WK-9Lq"/>
+                        <segue destination="tWG-Gz-0s2" kind="show" identifier="Detail" id="8uI-P2-LF6"/>
+                        <segue destination="C9N-hf-9Kh" kind="show" identifier="Profile" id="rc3-WK-9Lq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w34-Ek-NSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
         <!--ProfileController-->
         <scene sceneID="d0O-qd-QKp">
             <objects>
-                <viewController id="C9N-hf-9Kh" userLabel="ProfileController" sceneMemberID="viewController">
+                <viewController id="C9N-hf-9Kh" userLabel="ProfileController" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wmv-A3-5lK"/>
                         <viewControllerLayoutGuide type="bottom" id="V3n-lK-kp1"/>
@@ -145,7 +145,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3xy-eI-m9z">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Thumb" id="3xy-eI-m9z">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

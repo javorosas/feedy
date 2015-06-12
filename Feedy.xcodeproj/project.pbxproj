@@ -10,8 +10,8 @@
 		30F6F2EF49CFB9F92927D207 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF57D5014CCFA6DC1BACF40 /* libPods.a */; };
 		3EBB20041B2A58C000318683 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20031B2A58C000318683 /* main.m */; };
 		3EBB20071B2A58C000318683 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20061B2A58C000318683 /* AppDelegate.m */; };
-		3EBB200A1B2A58C000318683 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20091B2A58C000318683 /* FirstViewController.m */; };
-		3EBB200D1B2A58C000318683 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB200C1B2A58C000318683 /* SecondViewController.m */; };
+		3EBB200A1B2A58C000318683 /* CatsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20091B2A58C000318683 /* CatsFeedViewController.m */; };
+		3EBB200D1B2A58C000318683 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB200C1B2A58C000318683 /* ProfileViewController.m */; };
 		3EBB20101B2A58C000318683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB200E1B2A58C000318683 /* Main.storyboard */; };
 		3EBB20121B2A58C000318683 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB20111B2A58C000318683 /* Images.xcassets */; };
 		3EBB20151B2A58C000318683 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB20131B2A58C000318683 /* LaunchScreen.xib */; };
@@ -37,10 +37,10 @@
 		3EBB20031B2A58C000318683 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3EBB20051B2A58C000318683 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EBB20061B2A58C000318683 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3EBB20081B2A58C000318683 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		3EBB20091B2A58C000318683 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		3EBB200B1B2A58C000318683 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		3EBB200C1B2A58C000318683 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3EBB20081B2A58C000318683 /* CatsFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatsFeedViewController.h; sourceTree = "<group>"; };
+		3EBB20091B2A58C000318683 /* CatsFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatsFeedViewController.m; sourceTree = "<group>"; };
+		3EBB200B1B2A58C000318683 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3EBB200C1B2A58C000318683 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3EBB200F1B2A58C000318683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EBB20111B2A58C000318683 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3EBB20141B2A58C000318683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -156,10 +156,10 @@
 		3EBB202B1B2A5E3900318683 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				3EBB20081B2A58C000318683 /* FirstViewController.h */,
-				3EBB20091B2A58C000318683 /* FirstViewController.m */,
-				3EBB200B1B2A58C000318683 /* SecondViewController.h */,
-				3EBB200C1B2A58C000318683 /* SecondViewController.m */,
+				3EBB20081B2A58C000318683 /* CatsFeedViewController.h */,
+				3EBB20091B2A58C000318683 /* CatsFeedViewController.m */,
+				3EBB200B1B2A58C000318683 /* ProfileViewController.h */,
+				3EBB200C1B2A58C000318683 /* ProfileViewController.m */,
 				3EBB202F1B2B530C00318683 /* FeedCell.h */,
 				3EBB20301B2B530C00318683 /* FeedCell.m */,
 			);
@@ -309,11 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBB200D1B2A58C000318683 /* SecondViewController.m in Sources */,
+				3EBB200D1B2A58C000318683 /* ProfileViewController.m in Sources */,
 				3EBB202E1B2A5E9300318683 /* Profile.m in Sources */,
 				3EBB20071B2A58C000318683 /* AppDelegate.m in Sources */,
 				3EBB20311B2B530C00318683 /* FeedCell.m in Sources */,
-				3EBB200A1B2A58C000318683 /* FirstViewController.m in Sources */,
+				3EBB200A1B2A58C000318683 /* CatsFeedViewController.m in Sources */,
 				3EBB20041B2A58C000318683 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
