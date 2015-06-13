@@ -100,7 +100,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionText" destination="dQh-O6-Bbp" id="dwc-IT-QUr"/>
+                                    <outlet property="caption" destination="dQh-O6-Bbp" id="Zv4-D6-0gl"/>
                                     <outlet property="likes" destination="b6q-eG-Zn4" id="yJO-Cx-LPu"/>
                                     <outlet property="photo" destination="sZ3-dV-WBw" id="21p-q9-b42"/>
                                     <outlet property="profilePicture" destination="YHc-c7-ZyQ" id="Dx3-V2-dk2"/>
