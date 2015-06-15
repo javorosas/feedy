@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *fullName;
 @property (strong, nonatomic) NSString *bio;
-@property (strong, nonatomic) NSStirng *website;
+@property (strong, nonatomic) NSString *website;
 
 @end
