@@ -63,20 +63,7 @@
         NSArray *data = response[@"data"];
         NSMutableArray *posts = [NSMutableArray array];
         for (NSDictionary *postData in data) {
-            NSDictionary *user = postData[@"user"];
-            NSDictionary *photoData = postData[@"images"];
-            Photo *photo = [[Photo alloc] init];
-            photo.lowres = [NSURL URLWithString:photoData[@"low_resolution"][@"url"]];
-            photo.thumbnail = [NSURL URLWithString:photoData[@"thumbnail"][@"url"]];
-            photo.highres = [NSURL URLWithString:photoData[@"standard_resolution"][@"url"]];
-            
-            Post *post = [[Post alloc] init];
-            post.userId = user[@"id"];
-            post.username = user[@"username"];
-            post.profilePicture = [NSURL URLWithString:user[@"profile_picture"]];
-            post.photo = photo;
-            post.likes = (NSUInteger *)[postData[@"likes"][@"count"] integerValue];
-            post.caption = postData[@"caption"][@"text"];
+            Post *post = [[Post alloc] initWithPostData:postData];
             [posts addObject:post];
         }
         if (success) {

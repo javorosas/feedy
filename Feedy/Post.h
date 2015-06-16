@@ -18,4 +18,6 @@
 @property (nonatomic) NSUInteger *likes;
 @property (strong, nonatomic) NSString *caption;
 
+- (instancetype)initWithPostData:(NSDictionary *)postData;
+
 @end
