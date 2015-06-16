@@ -22,9 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = 500;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 500;
 //    self.tableView.bounces = YES;
 //    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.feed = [[Feed alloc] initWithTag:@"cat" success:^{
