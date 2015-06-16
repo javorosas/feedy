@@ -28,7 +28,6 @@
 //    self.tableView.bounces = YES;
 //    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.feed = [[Feed alloc] initWithTag:@"cat" success:^{
-        NSLog(@"Count success: %lu", self.feed.posts.count);
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         [self alertWithTitle:@"Error" message:error.localizedDescription];

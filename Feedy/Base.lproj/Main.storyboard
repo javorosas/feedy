@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="500" id="KQY-Tp-MfJ" customClass="FeedCell">
+                            <tableViewCell contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="500" id="KQY-Tp-MfJ" customClass="FeedCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQY-Tp-MfJ" id="dDz-th-3wW">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +67,7 @@
                                                 <constraint firstAttribute="width" secondItem="6z2-Fm-yiB" secondAttribute="height" multiplier="1:1" id="wKW-J4-8Qu"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1P-Gk-ODc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1P-Gk-ODc">
                                             <rect key="frame" x="0.0" y="56" width="375" height="375"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="a1P-Gk-ODc" secondAttribute="height" multiplier="1:1" id="cR4-tX-ZiB"/>
@@ -101,6 +101,8 @@
                                 <connections>
                                     <outlet property="caption" destination="dQh-O6-Bbp" id="Zv4-D6-0gl"/>
                                     <outlet property="likes" destination="b6q-eG-Zn4" id="yJO-Cx-LPu"/>
+                                    <outlet property="photo" destination="a1P-Gk-ODc" id="CpF-q8-dTi"/>
+                                    <outlet property="profilePicture" destination="6z2-Fm-yiB" id="mou-TN-tEk"/>
                                     <outlet property="username" destination="iB2-FJ-q3m" id="4PW-g7-R68"/>
                                 </connections>
                             </tableViewCell>
@@ -110,7 +112,7 @@
                             <outlet property="delegate" destination="Hv6-23-XpM" id="4Yk-UL-tfk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="#Cats" id="qm7-Vn-BMu"/>
+                    <navigationItem key="navigationItem" title="#Cat" id="qm7-Vn-BMu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="tWG-Gz-0s2" kind="show" identifier="Detail" id="8uI-P2-LF6"/>
