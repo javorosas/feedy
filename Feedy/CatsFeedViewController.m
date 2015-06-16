@@ -7,10 +7,14 @@
 //
 
 #import "CatsFeedViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import "Feed.h"
+#import "FeedCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CatsFeedViewController ()
 
-@property NSSet *feed;
+@property Feed *feed;
 
 @end
 
@@ -19,9 +23,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 500;
-    
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 500;
+//    self.tableView.bounces = YES;
+//    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.feed = [[Feed alloc] initWithTag:@"cat" success:^{
+        NSLog(@"Count success: %lu", self.feed.posts.count);
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [self alertWithTitle:@"Error" message:error.localizedDescription];
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +44,32 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.feed.count;
+    NSLog(@"Count: %lu", self.feed.posts.count);
+    return self.feed.posts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
+    
+    Post *post = (Post *)self.feed.posts[indexPath.row];
+    cell.username.text = post.username;
+    cell.likes.text = [NSString stringWithFormat:@"Likes: %lu", (unsigned long)post.likes];
+    cell.caption.text = post.caption;
+    [cell.profilePicture sd_setImageWithURL:post.profilePicture];
+    [cell.photo sd_setImageWithURL:post.photo.lowres];
+    return cell;
+}
+
+- (void)alertWithTitle:(NSString *)title message:(NSString *)message {
+    if ([UIAlertController class]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 @end
