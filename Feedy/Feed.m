@@ -48,8 +48,8 @@
 - (void)loadNewerWithSuccessHandler:(void (^)(void))success failure:(void (^)(NSError *))failure {
     [self.service getPostsWithTag:self.tag maxTagId:self.maxTagId minTagId:nil success:^(NSString *minTagId, NSString *maxTagId, NSArray *posts) {
         self.maxTagId = maxTagId;
-        // Place newer posts at the end of the array
-        _posts = [self.posts arrayByAddingObjectsFromArray:posts];
+        // Place newer posts at the beginning of the array
+        _posts = [posts arrayByAddingObjectsFromArray:self.posts];
         if (success) {
             success();
         }
@@ -63,8 +63,8 @@
 - (void)loadOlderWithSuccessHandler:(void (^)(void))success failure:(void (^)(NSError *))failure {
     [self.service getPostsWithTag:self.tag maxTagId:nil minTagId:self.minTagId success:^(NSString *minTagId, NSString *maxTagId, NSArray *posts) {
         _minTagId = minTagId;
-        // Place older posts at the beginning of the array
-        _posts = [posts arrayByAddingObjectsFromArray:self.posts];
+        // Place older posts at the end of the array
+        _posts = [self.posts arrayByAddingObjectsFromArray:posts];
         if (success) {
             success();
         }
