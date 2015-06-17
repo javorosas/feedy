@@ -9,6 +9,9 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 

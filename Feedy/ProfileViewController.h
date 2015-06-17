@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Profile.h"
 
 @interface ProfileViewController : UIViewController
 
+@property Profile *profile;
 
 @end
 
