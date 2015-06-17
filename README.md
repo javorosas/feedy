@@ -12,8 +12,8 @@ Instagram feed
 | X    | Design the custom TableViewCell                |    2 |       4 |     6 |
 | X    | Make the models                                |    2 |       6 |     8 |
 | X    | Implement the data from API in custom Cell     |    4 |       8 |    12 |
-|      | Implement update on swipe up                   |    4 |       8 |    12 |
-|      | Implement infinite scroll                      |    4 |       8 |    12 |
+| X    | Implement update on swipe up                   |    4 |       8 |    12 |
+| X    | Implement infinite scroll                      |    4 |       8 |    12 |
 |      | Read about collection view                     |    4 |       8 |    12 |
 |      | Design the Profile controller                  |    2 |       4 |     6 |
 |      | Implement API in profile controller            |    4 |       8 |    12 |
