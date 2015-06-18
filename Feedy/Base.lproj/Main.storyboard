@@ -145,7 +145,6 @@
                     <navigationItem key="navigationItem" title="#Cat" id="qm7-Vn-BMu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="tWG-Gz-0s2" kind="show" identifier="FeedToDetail" id="8uI-P2-LF6"/>
                         <segue destination="N62-2f-JWi" kind="show" identifier="Profile" id="3GQ-Y3-a0V"/>
                     </connections>
                 </tableViewController>
@@ -234,31 +233,10 @@
                         </connections>
                     </collectionView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="tWG-Gz-0s2" kind="show" identifier="ProfileToDetail" id="eey-sM-gSw"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0L-qJ-A11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2330.5" y="-554.5"/>
-        </scene>
-        <!--Detail Controller-->
-        <scene sceneID="Mtz-wY-TCM">
-            <objects>
-                <viewController id="tWG-Gz-0s2" userLabel="Detail Controller" customClass="PhotoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oVD-Ee-nxm"/>
-                        <viewControllerLayoutGuide type="bottom" id="EIt-lh-MP7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tQ6-Qj-1oX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kgc-GF-XKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2330.5" y="230.5"/>
         </scene>
         <!--Cats-->
         <scene sceneID="XFk-M1-E2W">
@@ -278,7 +256,4 @@
             <point key="canvasLocation" x="823" y="-178"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="8uI-P2-LF6"/>
-    </inferredMetricsTieBreakers>
 </document>

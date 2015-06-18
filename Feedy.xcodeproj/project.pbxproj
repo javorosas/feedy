@@ -10,7 +10,6 @@
 		30F6F2EF49CFB9F92927D207 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF57D5014CCFA6DC1BACF40 /* libPods.a */; };
 		3E0A5CF21B322C2300E2B261 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A5CF11B322C2300E2B261 /* PhotoCell.m */; };
 		3E0A5CF51B3278F400E2B261 /* ProfileHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A5CF41B3278F400E2B261 /* ProfileHeaderController.m */; };
-		3E0A5CF81B3332B100E2B261 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0A5CF71B3332B100E2B261 /* PhotoViewController.m */; };
 		3E9A4A721B2F46930097ABED /* InstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A4A711B2F46930097ABED /* InstagramService.m */; };
 		3E9A4A751B2F51270097ABED /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A4A741B2F51270097ABED /* Feed.m */; };
 		3EBB20041B2A58C000318683 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB20031B2A58C000318683 /* main.m */; };
@@ -43,8 +42,6 @@
 		3E0A5CF11B322C2300E2B261 /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 		3E0A5CF31B3278F400E2B261 /* ProfileHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderController.h; sourceTree = "<group>"; };
 		3E0A5CF41B3278F400E2B261 /* ProfileHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderController.m; sourceTree = "<group>"; };
-		3E0A5CF61B3332B100E2B261 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		3E0A5CF71B3332B100E2B261 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		3E9A4A701B2F46930097ABED /* InstagramService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramService.h; sourceTree = "<group>"; };
 		3E9A4A711B2F46930097ABED /* InstagramService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramService.m; sourceTree = "<group>"; };
 		3E9A4A731B2F51270097ABED /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 				3E0A5CF11B322C2300E2B261 /* PhotoCell.m */,
 				3E0A5CF31B3278F400E2B261 /* ProfileHeaderController.h */,
 				3E0A5CF41B3278F400E2B261 /* ProfileHeaderController.m */,
-				3E0A5CF61B3332B100E2B261 /* PhotoViewController.h */,
-				3E0A5CF71B3332B100E2B261 /* PhotoViewController.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -351,7 +346,6 @@
 				3EBB20311B2B530C00318683 /* FeedCell.m in Sources */,
 				3EBB200A1B2A58C000318683 /* CatsFeedViewController.m in Sources */,
 				3E0A5CF51B3278F400E2B261 /* ProfileHeaderController.m in Sources */,
-				3E0A5CF81B3332B100E2B261 /* PhotoViewController.m in Sources */,
 				3E9A4A751B2F51270097ABED /* Feed.m in Sources */,
 				3EBB203D1B2BACB800318683 /* Photo.m in Sources */,
 				3EBB20371B2BAAF100318683 /* Profile.m in Sources */,
