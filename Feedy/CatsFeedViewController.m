@@ -12,6 +12,7 @@
 #import "FeedCell.h"
 #import "ProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "PhotoViewController.h"
 
 @interface CatsFeedViewController ()
 
@@ -63,6 +64,7 @@
     [cell.photo sd_setImageWithURL:post.photo.lowres];
     
     cell.profilePictureButton.tag = indexPath.row;
+    cell.photoButton.tag = indexPath.row;
     
     if (indexPath.row >= self.feed.posts.count - 1) {
         [self loadOlder];
@@ -77,6 +79,12 @@
     [self performSegueWithIdentifier:@"Profile" sender:post];
 }
 
+- (IBAction)photoClicked:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    Post *post = self.feed.posts[button.tag];
+    Photo *photo = post.photo;
+    [self performSegueWithIdentifier:@"FeedToDetail" sender:photo];
+}
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {
     if ([UIAlertController class]) {
@@ -107,10 +115,17 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    Post *post = (Post *)sender;
-    ProfileViewController *profileViewController = (ProfileViewController *)segue.destinationViewController;
-    Profile *profile = [[Profile alloc] initWithPost:post];
-    profileViewController.profile = profile;
+    NSLog(segue.identifier);
+    if ([segue.identifier isEqualToString:@"Profile"]) {
+        Post *post = (Post *)sender;
+        ProfileViewController *profileViewController = (ProfileViewController *)segue.destinationViewController;
+        Profile *profile = [[Profile alloc] initWithPost:post];
+        profileViewController.profile = profile;
+    } else if ([segue.identifier isEqualToString:@"FeedToDetail"]) {
+        Photo *photo = (Photo *)sender;
+        PhotoViewController *photoViewController = (PhotoViewController *)segue.destinationViewController;
+        photoViewController.photo = photo;
+    }
     
 }
 

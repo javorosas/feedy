@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *likes;
 @property (weak, nonatomic) IBOutlet UITextView *caption;
 @property (weak, nonatomic) IBOutlet UIButton *profilePictureButton;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @end
