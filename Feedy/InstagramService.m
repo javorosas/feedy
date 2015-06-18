@@ -45,7 +45,7 @@
                minTagId:(NSString *)minTagId
                 success:(void (^)(NSString *, NSString *, NSArray *))success
                 failure:(void (^)(NSError *))failure {
-    NSString *url = [NSString stringWithFormat:@"%@%@/%@/media/recent", self.baseUrl, @"tags", tag];
+    NSString *url = [NSString stringWithFormat:@"%@tags/%@/media/recent", self.baseUrl, tag];
     NSLog(@"%@", url);
     NSDictionary *parameters;
     if (!maxTagId && !minTagId) {
@@ -68,6 +68,34 @@
         }
         if (success) {
             success(minTagId, maxTagId, [posts copy]);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+- (void)getGalleryWithUserId:(NSString *)userId
+                       maxId:(NSString *)maxId
+                     success:(void (^)(NSString *, NSArray *))success
+                     failure:(void (^)(NSError *))failure {
+    NSString *url = [NSString stringWithFormat:@"%@users/%@/media/recent", self.baseUrl, userId];
+    NSDictionary *parameters;
+    if (maxId) {
+        parameters = @{ @"client_id": self.clientId, @"max_id": maxId };
+    } else {
+        parameters = @{ @"client_id": self.clientId };
+    }
+    [self.afnManager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *response = (NSDictionary *)responseObject;
+        NSMutableArray *photos = [NSMutableArray array];
+        for (NSDictionary *photoData in response[@"data"]) {
+            [photos addObject:[[Photo alloc] initWithPhotoData:photoData]];
+        }
+        NSString *maxId = response[@"pagination"][@"next_max_id"];
+        if (success) {
+            success(maxId, [photos copy]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {

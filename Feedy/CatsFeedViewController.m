@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "Feed.h"
 #import "FeedCell.h"
+#import "ProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CatsFeedViewController ()
@@ -41,9 +42,6 @@
     [self.refreshControl addTarget:self action:@selector(loadNewer) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,12 +62,21 @@
     [cell.profilePicture sd_setImageWithURL:post.profilePicture];
     [cell.photo sd_setImageWithURL:post.photo.lowres];
     
+    cell.profilePictureButton.tag = indexPath.row;
+    
     if (indexPath.row >= self.feed.posts.count - 1) {
         [self loadOlder];
     }
     
     return cell;
 }
+
+- (IBAction)profilePictureClicked:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    Post *post = self.feed.posts[button.tag];
+    [self performSegueWithIdentifier:@"Profile" sender:post];
+}
+
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {
     if ([UIAlertController class]) {
@@ -99,8 +106,12 @@
     }];
 }
 
--(void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
-    NSLog(@"wohooo@");
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    Post *post = (Post *)sender;
+    ProfileViewController *profileViewController = (ProfileViewController *)segue.destinationViewController;
+    Profile *profile = [[Profile alloc] initWithPost:post];
+    profileViewController.profile = profile;
+    
 }
 
 @end
