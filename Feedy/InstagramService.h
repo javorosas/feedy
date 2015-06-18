@@ -19,4 +19,9 @@
                 success:(void (^)(NSString *minTagId, NSString *maxTagId, NSArray *posts))success
                 failure:(void (^)(NSError *error))failure;
 
+- (void)getGalleryWithUserId:(NSString *)userId
+                       maxId:(NSString *)maxId
+                     success:(void(^)(NSString *maxId, NSArray *photos))success
+                     failure:(void(^)(NSError *error))failure;
+
 @end
