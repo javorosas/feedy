@@ -12,5 +12,6 @@
 @interface PhotoCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @end

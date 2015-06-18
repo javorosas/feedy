@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import <UIImageView+WebCache.h>
+#import <VPInteractiveImageView.h>
 #import "PhotoCell.h"
 #import "ProfileHeaderController.h"
 
@@ -46,6 +47,7 @@
     PhotoCell *cell = (PhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
     Photo *photo = self.profile.photos[indexPath.row];
     [cell.photo sd_setImageWithURL:photo.thumbnail];
+    cell.photoButton.tag = indexPath.row;
     if (indexPath.row >= self.profile.photos.count - 1) {
         [self loadMore];
     }
@@ -66,6 +68,13 @@
     } failure:^(NSError *error) {
         [self alertWithTitle:@"Error" message:error.localizedDescription];
     }];
+}
+
+- (IBAction)photoClicked:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    PhotoCell *cell = (PhotoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:button.tag inSection:0]];
+    VPInteractiveImageView *interactiveImageView = [[VPInteractiveImageView alloc] initWithImage:cell.photo.image];
+    [interactiveImageView presentFullscreen];
 }
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {

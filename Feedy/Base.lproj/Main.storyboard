@@ -177,17 +177,31 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-zJ-sRa" userLabel="Photo">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-5m-pps">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoClicked:" destination="N62-2f-JWi" eventType="touchUpInside" id="IUx-xX-UMF"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="WdD-zJ-sRa" firstAttribute="top" secondItem="Pzx-Nc-f0P" secondAttribute="top" id="DKD-Hj-dqk"/>
                                     <constraint firstItem="WdD-zJ-sRa" firstAttribute="leading" secondItem="Pzx-Nc-f0P" secondAttribute="leading" id="Srd-dD-phe"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="trailing" secondItem="WdD-zJ-sRa" secondAttribute="trailing" id="TJb-EM-Op6"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="bottom" secondItem="WdD-zJ-sRa" secondAttribute="bottom" id="apQ-Li-8fp"/>
                                     <constraint firstAttribute="bottom" secondItem="WdD-zJ-sRa" secondAttribute="bottom" id="c0V-tn-z6q"/>
                                     <constraint firstAttribute="trailing" secondItem="WdD-zJ-sRa" secondAttribute="trailing" id="mhc-iv-uIv"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="top" secondItem="WdD-zJ-sRa" secondAttribute="top" id="q66-xl-HkQ"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="leading" secondItem="WdD-zJ-sRa" secondAttribute="leading" id="yGk-sw-mDg"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="photo" destination="WdD-zJ-sRa" id="ZB4-CM-Hdo"/>
+                                    <outlet property="photoButton" destination="WVN-5m-pps" id="nQX-wW-AgU"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
