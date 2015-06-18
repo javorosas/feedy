@@ -60,3 +60,9 @@
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
 
+// VPInteractiveImageView
+#define COCOAPODS_POD_AVAILABLE_VPInteractiveImageView
+#define COCOAPODS_VERSION_MAJOR_VPInteractiveImageView 0
+#define COCOAPODS_VERSION_MINOR_VPInteractiveImageView 2
+#define COCOAPODS_VERSION_PATCH_VPInteractiveImageView 0
+
