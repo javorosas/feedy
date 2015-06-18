@@ -13,6 +13,8 @@
 #import "ProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "PhotoViewController.h"
+#import <VPInteractiveImageViewController.h>
+#import <VPInteractiveImageView.h>
 
 @interface CatsFeedViewController ()
 
@@ -81,9 +83,9 @@
 
 - (IBAction)photoClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
-    Post *post = self.feed.posts[button.tag];
-    Photo *photo = post.photo;
-    [self performSegueWithIdentifier:@"FeedToDetail" sender:photo];
+    FeedCell *cell = (FeedCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:button.tag inSection:0]];
+    VPInteractiveImageView *interactiveImageView = [[VPInteractiveImageView alloc] initWithImage:cell.photo.image];
+    [interactiveImageView presentFullscreen];
 }
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {
