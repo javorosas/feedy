@@ -73,6 +73,15 @@
                                                 <constraint firstAttribute="width" secondItem="a1P-Gk-ODc" secondAttribute="height" multiplier="1:1" id="cR4-tX-ZiB"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YF-3D-R3c">
+                                            <rect key="frame" x="0.0" y="56" width="375" height="375"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoClicked:" destination="Hv6-23-XpM" eventType="touchUpInside" id="riz-Vz-P88"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twf-UO-9N2" userLabel="Profile picture button">
                                             <rect key="frame" x="8" y="8" width="40" height="40"/>
                                             <state key="normal">
@@ -90,14 +99,18 @@
                                         <constraint firstItem="dQh-O6-Bbp" firstAttribute="leading" secondItem="dDz-th-3wW" secondAttribute="leading" constant="8" id="6h2-jp-l3V"/>
                                         <constraint firstItem="b6q-eG-Zn4" firstAttribute="top" secondItem="a1P-Gk-ODc" secondAttribute="bottom" constant="8" id="6xx-ge-SVF"/>
                                         <constraint firstItem="iB2-FJ-q3m" firstAttribute="top" secondItem="dDz-th-3wW" secondAttribute="top" constant="17" id="8gO-4Q-StI"/>
+                                        <constraint firstItem="6YF-3D-R3c" firstAttribute="trailing" secondItem="a1P-Gk-ODc" secondAttribute="trailing" id="IZC-v4-POJ"/>
                                         <constraint firstItem="6z2-Fm-yiB" firstAttribute="centerX" secondItem="Twf-UO-9N2" secondAttribute="centerX" id="Kdu-2e-DDE"/>
                                         <constraint firstAttribute="trailing" secondItem="iB2-FJ-q3m" secondAttribute="trailing" constant="8" id="MyI-cD-MEo"/>
                                         <constraint firstItem="Twf-UO-9N2" firstAttribute="width" secondItem="a1P-Gk-ODc" secondAttribute="width" id="RDw-B2-9PL"/>
                                         <constraint firstAttribute="trailing" secondItem="b6q-eG-Zn4" secondAttribute="trailing" constant="8" id="W0d-Jd-EKC"/>
+                                        <constraint firstItem="6YF-3D-R3c" firstAttribute="bottom" secondItem="a1P-Gk-ODc" secondAttribute="bottom" id="W4c-x2-xGz"/>
                                         <constraint firstAttribute="bottom" secondItem="dQh-O6-Bbp" secondAttribute="bottom" constant="5" id="aLP-Gb-LRi"/>
+                                        <constraint firstItem="6YF-3D-R3c" firstAttribute="top" secondItem="a1P-Gk-ODc" secondAttribute="top" id="gBL-UB-l4w"/>
                                         <constraint firstItem="6z2-Fm-yiB" firstAttribute="width" secondItem="Twf-UO-9N2" secondAttribute="width" id="jMG-lT-nWk"/>
                                         <constraint firstAttribute="trailing" secondItem="dQh-O6-Bbp" secondAttribute="trailing" constant="8" id="k4i-Oy-iZU"/>
                                         <constraint firstItem="iB2-FJ-q3m" firstAttribute="leading" secondItem="6z2-Fm-yiB" secondAttribute="trailing" constant="8" id="lbP-c3-fJR"/>
+                                        <constraint firstItem="6YF-3D-R3c" firstAttribute="leading" secondItem="a1P-Gk-ODc" secondAttribute="leading" id="miB-8n-llt"/>
                                         <constraint firstAttribute="trailing" secondItem="a1P-Gk-ODc" secondAttribute="trailing" id="mkE-mr-nar"/>
                                         <constraint firstItem="iB2-FJ-q3m" firstAttribute="centerY" secondItem="6z2-Fm-yiB" secondAttribute="centerY" constant="-0.5" id="qit-ji-6a1"/>
                                         <constraint firstItem="a1P-Gk-ODc" firstAttribute="leading" secondItem="dDz-th-3wW" secondAttribute="leading" id="qsk-TF-pTJ"/>
@@ -117,6 +130,7 @@
                                     <outlet property="caption" destination="dQh-O6-Bbp" id="Zv4-D6-0gl"/>
                                     <outlet property="likes" destination="b6q-eG-Zn4" id="yJO-Cx-LPu"/>
                                     <outlet property="photo" destination="a1P-Gk-ODc" id="CpF-q8-dTi"/>
+                                    <outlet property="photoButton" destination="6YF-3D-R3c" id="GVy-Ec-q1u"/>
                                     <outlet property="profilePicture" destination="6z2-Fm-yiB" id="mou-TN-tEk"/>
                                     <outlet property="profilePictureButton" destination="Twf-UO-9N2" id="gIk-cl-yhb"/>
                                     <outlet property="username" destination="iB2-FJ-q3m" id="4PW-g7-R68"/>
@@ -131,7 +145,6 @@
                     <navigationItem key="navigationItem" title="#Cat" id="qm7-Vn-BMu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="tWG-Gz-0s2" kind="show" identifier="Detail" id="8uI-P2-LF6"/>
                         <segue destination="N62-2f-JWi" kind="show" identifier="Profile" id="3GQ-Y3-a0V"/>
                     </connections>
                 </tableViewController>
@@ -164,22 +177,36 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-zJ-sRa" userLabel="Photo">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-5m-pps">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoClicked:" destination="N62-2f-JWi" eventType="touchUpInside" id="IUx-xX-UMF"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="WdD-zJ-sRa" firstAttribute="top" secondItem="Pzx-Nc-f0P" secondAttribute="top" id="DKD-Hj-dqk"/>
                                     <constraint firstItem="WdD-zJ-sRa" firstAttribute="leading" secondItem="Pzx-Nc-f0P" secondAttribute="leading" id="Srd-dD-phe"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="trailing" secondItem="WdD-zJ-sRa" secondAttribute="trailing" id="TJb-EM-Op6"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="bottom" secondItem="WdD-zJ-sRa" secondAttribute="bottom" id="apQ-Li-8fp"/>
                                     <constraint firstAttribute="bottom" secondItem="WdD-zJ-sRa" secondAttribute="bottom" id="c0V-tn-z6q"/>
                                     <constraint firstAttribute="trailing" secondItem="WdD-zJ-sRa" secondAttribute="trailing" id="mhc-iv-uIv"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="top" secondItem="WdD-zJ-sRa" secondAttribute="top" id="q66-xl-HkQ"/>
+                                    <constraint firstItem="WVN-5m-pps" firstAttribute="leading" secondItem="WdD-zJ-sRa" secondAttribute="leading" id="yGk-sw-mDg"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="photo" destination="WdD-zJ-sRa" id="ZB4-CM-Hdo"/>
+                                    <outlet property="photoButton" destination="WVN-5m-pps" id="nQX-wW-AgU"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileHeader" id="82i-lo-uyh" customClass="ProfileHeaderController">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                            <rect key="frame" x="0.0" y="64" width="375" height="76"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y2l-PU-Dmk" userLabel="Profile picture">
@@ -223,25 +250,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0L-qJ-A11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345.5" y="-373.5"/>
-        </scene>
-        <!--Detail Controller-->
-        <scene sceneID="Mtz-wY-TCM">
-            <objects>
-                <viewController id="tWG-Gz-0s2" userLabel="Detail Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oVD-Ee-nxm"/>
-                        <viewControllerLayoutGuide type="bottom" id="EIt-lh-MP7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tQ6-Qj-1oX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kgc-GF-XKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2287.5" y="229.5"/>
+            <point key="canvasLocation" x="2330.5" y="-554.5"/>
         </scene>
         <!--Cats-->
         <scene sceneID="XFk-M1-E2W">

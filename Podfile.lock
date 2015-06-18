@@ -23,13 +23,16 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
+  - VPInteractiveImageView (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - SDWebImage (~> 3.7)
+  - VPInteractiveImageView (~> 0.2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  VPInteractiveImageView: 2086d33369c275ffbe541a171ee909a4097ec4f2
 
 COCOAPODS: 0.37.0
