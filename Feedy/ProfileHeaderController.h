@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileHeaderController : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UIImageView *profilePictureView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface PhotoCell : NSObject
+@interface PhotoCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
 
 @end
