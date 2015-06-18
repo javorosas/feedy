@@ -117,16 +117,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(segue.identifier);
     if ([segue.identifier isEqualToString:@"Profile"]) {
         Post *post = (Post *)sender;
         ProfileViewController *profileViewController = (ProfileViewController *)segue.destinationViewController;
         Profile *profile = [[Profile alloc] initWithPost:post];
         profileViewController.profile = profile;
-    } else if ([segue.identifier isEqualToString:@"FeedToDetail"]) {
-        Photo *photo = (Photo *)sender;
-        PhotoViewController *photoViewController = (PhotoViewController *)segue.destinationViewController;
-        photoViewController.photo = photo;
     }
     
 }
