@@ -1,0 +1,1 @@
+../../../VPInteractiveImageView/VPInteractiveImageViewController/VPInteractiveImageViewController/VPTransitionAnimator.h
