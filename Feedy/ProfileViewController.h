@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Profile.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UICollectionViewController
 
+@property NSString *userId;
 @property Profile *profile;
 
 @end
