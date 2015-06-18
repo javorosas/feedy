@@ -109,11 +109,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     Post *post = (Post *)sender;
     ProfileViewController *profileViewController = (ProfileViewController *)segue.destinationViewController;
-    Profile *profile = [[Profile alloc] init];
-    profile.username = post.username;
-    profile.picture = post.profilePicture;
-    profile.userId = post.userId;
-    
+    Profile *profile = [[Profile alloc] initWithPost:post];
     profileViewController.profile = profile;
     
 }
