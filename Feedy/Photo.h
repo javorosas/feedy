@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSURL *thumbnail;
 @property (strong, nonatomic) NSURL *lowres;
 
+-(instancetype)initWithPhotoData:(NSDictionary *)photoData;
+
 @end
