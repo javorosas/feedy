@@ -25,23 +25,10 @@
         self.picture = post.profilePicture;
         self.username = post.username;
         self.service = [InstagramService sharedInstance];
+        self.photos = [NSArray array];
+        self.maxId = nil;
     }
     return self;
-}
-
-- (void)loadGalleryWithSuccessHandler:(void(^)(void))success failure:(void(^)(NSError *))failure {
-    [self.service getGalleryWithUserId:self.userId maxId:nil success:^(NSString *maxId, NSArray *photos) {
-        self.maxId = maxId;
-        self.photos = photos;
-        NSLog(@"%lu", photos.count);
-        if (success) {
-            success();
-        }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
 }
 
 - (void)loadMorePhotosWithSuccessHandler:(void(^)(void))success failure:(void(^)(NSError *))failure {

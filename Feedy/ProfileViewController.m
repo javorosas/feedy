@@ -20,12 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.collectionView.delegate = self;
-
-    
-//    [self.profilePictureView sd_setImageWithURL:self.profile.picture];
-    [self.profile loadGalleryWithSuccessHandler:^{
+    [self.profile loadMorePhotosWithSuccessHandler:^{
         NSLog(@"Loaded!");
         [self.collectionView reloadData];
     } failure:^(NSError *error) {

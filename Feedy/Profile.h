@@ -21,7 +21,6 @@
 @property (strong, nonatomic) NSString *maxId;
 
 - (instancetype)initWithPost:(Post *)post;
-- (void)loadGalleryWithSuccessHandler:(void(^)(void))success failure:(void(^)(NSError *error))failure;
 - (void)loadMorePhotosWithSuccessHandler:(void(^)(void))success failure:(void(^)(NSError *error))failure;
 
 @end
