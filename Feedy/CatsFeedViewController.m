@@ -12,7 +12,6 @@
 #import "FeedCell.h"
 #import "ProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <VPInteractiveImageViewController.h>
 #import <VPInteractiveImageView.h>
 
 @interface CatsFeedViewController ()
