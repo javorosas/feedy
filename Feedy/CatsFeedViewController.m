@@ -13,10 +13,13 @@
 #import "ProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <VPInteractiveImageView.h>
+#import <MWPhotoBrowser.h>
+#import "Profile.h"
 
 @interface CatsFeedViewController ()
 
 @property Feed *feed;
+@property NSURL *selectedPhoto;
 
 @end
 
@@ -79,11 +82,25 @@
     [self performSegueWithIdentifier:@"Profile" sender:post];
 }
 
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return 1;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+        MWPhoto *mwPhoto = [MWPhoto photoWithURL:self.selectedPhoto];
+        return mwPhoto;
+}
+
 - (IBAction)photoClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
-    FeedCell *cell = (FeedCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:button.tag inSection:0]];
-    VPInteractiveImageView *interactiveImageView = [[VPInteractiveImageView alloc] initWithImage:cell.photo.image];
-    [interactiveImageView presentFullscreen];
+//    VPInteractiveImageView *interactiveImageView = [[VPInteractiveImageView alloc] initWithImage:cell.photo.image];
+//    [interactiveImageView presentFullscreen];
+    
+    Post *post = self.feed.posts[button.tag];
+    self.selectedPhoto = post.photo.highres;
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.enableGrid = NO;
+    [self.navigationController pushViewController:browser animated:YES];
 }
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {
