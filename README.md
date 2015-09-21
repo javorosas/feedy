@@ -7,7 +7,7 @@ You can change the search term though, and load whatever hashtag you like.
 
 ## Screenshots
 
-![feed](https://raw.github.com/javorosas/feedy/master/screenshots/01.png)
-![profile](https://raw.github.com/javorosas/feedy/master/screenshots/02.png)
-![detail](https://raw.github.com/javorosas/feedy/master/screenshots/03.png)
+![feed](https://raw.github.com/javorosas/feedy/master/screenshots/01.png =300px)
+![profile](https://raw.github.com/javorosas/feedy/master/screenshots/02.png =300px)
+![detail](https://raw.github.com/javorosas/feedy/master/screenshots/03.png =300px)
 
