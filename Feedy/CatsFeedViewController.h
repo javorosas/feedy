@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MWPhotoBrowser.h>
 
-@interface CatsFeedViewController : UITableViewController
+@interface CatsFeedViewController : UITableViewController <MWPhotoBrowserDelegate>
 
 
 @end

@@ -8,11 +8,12 @@
 
 #import "ProfileViewController.h"
 #import <UIImageView+WebCache.h>
-#import <VPInteractiveImageView.h>
 #import "PhotoCell.h"
 #import "ProfileHeaderController.h"
 
 @interface ProfileViewController ()
+
+@property NSURL *selectedPhoto;
 
 @end
 
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"did load!");
     [self.profile loadMorePhotosWithSuccessHandler:^{
         NSLog(@"Loaded!");
         [self.collectionView reloadData];
@@ -67,10 +69,24 @@
 
 - (IBAction)photoClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
-    PhotoCell *cell = (PhotoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:button.tag inSection:0]];
-    VPInteractiveImageView *interactiveImageView = [[VPInteractiveImageView alloc] initWithImage:cell.photo.image];
-    [interactiveImageView presentFullscreen];
+    Photo *photo = self.profile.photos[button.tag];
+    self.selectedPhoto = photo.highres;
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.enableGrid = NO;
+    [self.navigationController pushViewController:browser animated:YES];
 }
+
+# pragma mark MWPhotoBrowser
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return 1;
+}
+
+- (id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    return [MWPhoto photoWithURL:self.selectedPhoto];
+}
+
+# pragma mark Util
 
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message {
     if ([UIAlertController class]) {

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Profile.h"
+#import <MWPhotoBrowser.h>
 
-@interface ProfileViewController : UICollectionViewController
+@interface ProfileViewController : UICollectionViewController <MWPhotoBrowserDelegate>
 
 @property NSString *userId;
 @property Profile *profile;
